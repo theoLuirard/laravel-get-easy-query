@@ -1,9 +1,8 @@
 <?php
 
-namespace theoLuirard\TreeStructuredRelation\Exceptions;
+namespace theoLuirard\getEasyQuery\Exceptions;
 
 use Exception;
-use Illuminate\Database\Eloquent\Model;
 use RuntimeException;
 
 class ProvidedParamtersTypeNotAcceptedException extends RuntimeException

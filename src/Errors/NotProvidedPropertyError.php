@@ -1,6 +1,6 @@
 <?php
 
-namespace theoLuirard\TreeStructuredRelation\Errors;
+namespace theoLuirard\getEasyQuery\Errors;
 
 use Error;
 
