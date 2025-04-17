@@ -359,11 +359,11 @@ trait GetEasyQuery
 
         // Looks if defined
         if (!isset(static::$get_easy_query_accepted_select)) {
-            throw new NotProvidedPropertyError(static::class, '$accepted_select', 500);
+            throw new NotProvidedPropertyError(static::class, '$get_easy_query_accepted_select', 500);
         }
         // Looks for correcte format -> array
         if (!is_array(static::$get_easy_query_accepted_select)) {
-            throw new NotAcceptedPropertyError(static::class, '$accepted_select', gettype(static::$get_easy_query_accepted_select), ['array'], 500);
+            throw new NotAcceptedPropertyError(static::class, '$get_easy_query_accepted_select', gettype(static::$get_easy_query_accepted_select), ['array'], 500);
 
         }
 
@@ -380,11 +380,11 @@ trait GetEasyQuery
 
         // Looks if defined
         if (!isset(static::$get_easy_query_accepted_filters)) {
-            throw new NotProvidedPropertyError(static::class, '$accepted_filters', 500);
+            throw new NotProvidedPropertyError(static::class, '$get_easy_query_accepted_filters', 500);
         }
         // Looks for correcte format -> array
         if (!is_array(static::$get_easy_query_accepted_filters)) {
-            throw new NotAcceptedPropertyError(static::class, '$accepted_relation_filters', gettype(static::$get_easy_query_accepted_filters), ['array'], 500);
+            throw new NotAcceptedPropertyError(static::class, '$get_easy_query_accepted_filters', gettype(static::$get_easy_query_accepted_filters), ['array'], 500);
         }
 
         return static::$get_easy_query_accepted_filters;
@@ -400,11 +400,11 @@ trait GetEasyQuery
 
         // Looks if defined
         if (!isset(static::$get_easy_query_accepted_relation_filters)) {
-            throw new NotProvidedPropertyError(static::class, '$accepted_relation_filters', 500);
+            throw new NotProvidedPropertyError(static::class, '$get_easy_query_accepted_relation_filters', 500);
         }
         // Looks for correcte format -> array
         if (!is_array(static::$get_easy_query_accepted_relation_filters)) {
-            throw new NotAcceptedPropertyError(static::class, '$accepted_relation_filters', gettype(static::$get_easy_query_accepted_relation_filters), ['array'], 500);
+            throw new NotAcceptedPropertyError(static::class, '$get_easy_query_accepted_relation_filters', gettype(static::$get_easy_query_accepted_relation_filters), ['array'], 500);
 
         }
 
@@ -424,12 +424,12 @@ trait GetEasyQuery
             try {
                 return static::getAcceptedSelect();
             } catch (Error $e) {
-                throw new NotProvidedPropertyError(static::class, '$accepted_order_by', 500);
+                throw new NotProvidedPropertyError(static::class, '$get_easy_query_accepted_order_by', 500);
             }
         }
         // Looks for correcte format -> array
         if (!is_array(static::$get_easy_query_accepted_order_by)) {
-            throw new NotAcceptedPropertyError(static::class, '$accepted_order_by', gettype(static::$accepted_order_by), ['array'], 500);
+            throw new NotAcceptedPropertyError(static::class, '$get_easy_query_accepted_order_by', gettype(static::$accepted_order_by), ['array'], 500);
         }
 
         return static::$get_easy_query_accepted_order_by;
@@ -445,11 +445,11 @@ trait GetEasyQuery
 
         // Looks if defined
         if (!isset(static::$get_easy_query_accepted_with)) {
-            throw new NotProvidedPropertyError(static::class, '$accepted_with', 500);
+            throw new NotProvidedPropertyError(static::class, '$get_easy_query_accepted_with', 500);
         }
         // Looks for correcte format -> array
         if (!is_array(static::$get_easy_query_accepted_with)) {
-           throw new NotAcceptedPropertyError(static::class, '$accepted_with', gettype(static::$accepted_with), ['array'], 500);
+           throw new NotAcceptedPropertyError(static::class, '$get_easy_query_accepted_with', gettype(static::$accepted_with), ['array'], 500);
         }
 
         return static::$get_easy_query_accepted_with;
@@ -468,7 +468,7 @@ trait GetEasyQuery
 
             // Looks for correcte format -> array
             if (!is_array(static::$get_easy_query_accepted_operators)) {
-                throw new NotAcceptedPropertyError(static::class, '$accepted_with', gettype(static::$accepted_operators), ['array'], 500);
+                throw new NotAcceptedPropertyError(static::class, '$accepted_with', gettype(static::$get_easy_query_accepted_operators), ['array'], 500);
             } else {
                 return static::$get_easy_query_accepted_operators;
             }
