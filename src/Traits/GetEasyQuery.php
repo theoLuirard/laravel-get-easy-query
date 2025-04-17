@@ -6,13 +6,12 @@ use Error;
 use Illuminate\Contracts\Database\Eloquent\Builder as EloquentBuilder;
 use Illuminate\Database\Eloquent\Builder as DatabaseEloquentBuilder;
 use Illuminate\Database\Query\Builder;
-use Illuminate\Support\Facades\Log;
-use theoLuirard\TreeStructuredRelation\Errors\NotAcceptedPropertyError;
-use theoLuirard\TreeStructuredRelation\Errors\NotProvidedPropertyError;
-use theoLuirard\TreeStructuredRelation\Exceptions\NotAcceptedFilterParametersException;
-use theoLuirard\TreeStructuredRelation\Exceptions\NotAcceptedOrderByParametersException;
-use theoLuirard\TreeStructuredRelation\Exceptions\NotAcceptedSelectParametersException;
-use theoLuirard\TreeStructuredRelation\Exceptions\NotAcceptedWithParametersException;
+use theoLuirard\getEasyQuery\Errors\NotAcceptedPropertyError;
+use theoLuirard\getEasyQuery\Errors\NotProvidedPropertyError;
+use theoLuirard\getEasyQuery\Exceptions\NotAcceptedFilterParametersException;
+use theoLuirard\getEasyQuery\Exceptions\NotAcceptedOrderByParametersException;
+use theoLuirard\getEasyQuery\Exceptions\NotAcceptedSelectParametersException;
+use theoLuirard\getEasyQuery\Exceptions\NotAcceptedWithParametersException;
 
 /*
 |--------------------------------------------------------------------------
@@ -198,7 +197,7 @@ trait GetEasyQuery
                         }
                     });
 
-                    
+
                 } else {
                     throw new NotAcceptedFilterParametersException(
                         self::class,
