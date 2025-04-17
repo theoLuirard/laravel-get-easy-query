@@ -157,7 +157,7 @@ trait GetEasyQuery
                     $field = $filter["field"];
 
                     $qualifiedField = $query->getModel()->qualifyColumn($field);
-                    $type = $filter["type"] ?? "=";
+                    $type = isset($filter["type"]) ? strtoupper($filter["type"]) : "=";
                     $value = $filter["value"] ?? null;
 
                     // Manage specific where clause 
@@ -171,6 +171,8 @@ trait GetEasyQuery
                         $query->where($qualifiedField, $type, $value);
                     }
                 } else if (isset($accepted_relation_filters[$filter["field"]]) && in_array(strtoupper($filter["type"]), $accepted_operators)) {
+                    
+                    
                     /* SPECIFIC USE CASE */
                     /*
                         HasMany relationship filters -> should use whereHas method 
@@ -181,7 +183,7 @@ trait GetEasyQuery
 
 
                         $qualifiedField = $query->getModel()->qualifyColumn($field);
-                        $type = $filter["type"] ?? "=";
+                        $type = isset($filter["type"]) ? strtoupper($filter["type"]) : "=";
                         $value = $filter["value"];
 
                         // Manage specific where clause 
@@ -195,6 +197,8 @@ trait GetEasyQuery
                             $query->where($qualifiedField, $type, $value);
                         }
                     });
+
+                    
                 } else {
                     throw new NotAcceptedFilterParametersException(
                         self::class,
